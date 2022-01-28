@@ -1,0 +1,287 @@
+// COMMON :: START
+
+.roadmap {
+  overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: linear-gradient(180deg, #080134 63.84%, #01C5BA 100%);
+
+  &__title {
+    padding-bottom: 75px;
+    text-align: center;
+    font-family: 'MonumentExtended', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    color: #FFFFFF;
+    @media screen and (max-width: 1023px) {
+      font-size: 40px;
+    }
+    @media screen and (max-width: 767px) {
+      padding-bottom: 50px;
+      font-size: 35px;
+    }
+  }
+
+  &__box {
+    @media screen and (max-width: 1023px) {
+      flex: 1;
+      min-width: 1px;
+      max-width: 100%;
+    }
+
+    &-1 {
+      .card {
+        margin-left: auto;
+      }
+    }
+    &-2 {
+      transform: translateY(-159px);
+      @media screen and (max-width: 1279px) {
+        transform: translateY(-110px);
+      }
+      @media screen and (max-width: 767px) {
+        transform: unset;
+      }
+    }
+    &-3 {
+      margin-bottom: 205px;
+      @media screen and (max-width: 1023px) {
+        margin-bottom: 125px;
+      }
+      @media screen and (max-width: 767px) {
+        margin-bottom: 0;
+      }
+
+      .card {
+        margin-left: auto;
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      > div {
+        position: relative;
+        display: flex;
+
+        &:not(:last-of-type) {
+          @include adaptive(767) {
+            padding-bottom: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  &__visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    min-width: 1px;
+    max-width: 100%;
+    @media screen and (max-width: 1023px) {
+      width: auto;
+    }
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+
+    &-1 {
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      .roadmap__visual {
+        &-line {
+          top: 125px;
+          right: 0;
+          @media screen and (max-width: 1023px) {
+            top: auto;
+            right: -15px;
+            bottom: 110px;
+          }
+        }
+
+        &-img {
+          max-width: 456px;
+          margin-right: auto;
+          transform: translateY(-50px);
+          @media screen and (max-width: 1023px) {
+            max-width: 345px;
+            margin: auto;
+          }
+        }
+      }
+    }
+    &-2 {
+      .roadmap__visual {
+        &-line {
+          left: 0;
+          bottom: 0;
+          @media screen and (max-width: 1023px) {
+            left: -15px;
+          }
+        }
+      }
+    }
+    &-3 {
+      .roadmap__visual {
+        &-line {
+          right: 0;
+          bottom: 0;
+          @media screen and (max-width: 1023px) {
+            right: -15px;
+          }
+        }
+
+        &-img {
+          margin-right: auto;
+          transform: translateY(-50px);
+          @media screen and (max-width: 1023px) {
+            margin: auto;
+            transform: unset;
+          }
+        }
+      }
+    }
+    &-4 {
+      align-items: flex-start;
+      justify-content: flex-end;
+
+      .roadmap__visual {
+        &-line {
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          @media screen and (max-width: 1023px) {
+            left: -15px;
+          }
+        }
+
+        &-img {
+          max-width: 462px;
+          margin-left: auto;
+          transform: translateY(-150px);
+          @media screen and (max-width: 1279px) {
+            max-width: 400px;
+          }
+          @media screen and (max-width: 1023px) {
+            max-width: 345px;
+            margin: auto;
+            transform: translate(50px, -50px);
+          }
+        }
+      }
+    }
+
+    &-line {
+      position: absolute;
+      display: block;
+      max-width: 100%;
+      height: auto;
+      @media screen and (max-width: 1279px) {
+        max-width: 90%;
+      }
+      @media screen and (max-width: 1023px) {
+        //position: static;
+        max-width: 65%;
+      }
+    }
+
+    &-img {
+      z-index: 5;
+      position: relative;
+      display: block;
+      max-width: 100%;
+      height: auto;
+      @media screen and (max-width: 1279px) {
+
+      }
+      @media screen and (max-width: 1023px) {
+        position: static;
+      }
+    }
+  }
+
+  .card {
+    width: 100%;
+    max-width: 532px;
+    padding: 35px 30px;
+    border: 1px solid #FFFFFF;
+    border-radius: 0;
+    background-color: transparent;
+    @media screen and (max-width: 1279px) {
+      max-width: 432px;
+    }
+    @media screen and (max-width: 1023px) {
+      padding: 30px 15px;
+      max-width: calc(100% - 15px);
+    }
+    @media screen and (max-width: 767px) {
+      padding: 30px 15px;
+      max-width: 100%;
+    }
+
+    &-body {
+      padding: 0;
+
+      .roadmap__visual-img {
+        display: none;
+        position: static;
+        @include adaptive(767) {
+          display: block;
+        }
+      }
+    }
+
+    &-icon {
+      display: flex;
+      align-items: flex-start;
+      padding-bottom: 100px;
+      @media screen and (max-width: 1279px) {
+        padding-bottom: 50px;
+      }
+    }
+
+    &-title {
+      margin-bottom: 20px;
+      font-family: 'Monument Extended', sans-serif;
+      font-weight: 900;
+      font-size: 24px;
+      color: #FFFFFF;
+      @media screen and (max-width: 1279px) {
+        font-size: 22px;
+      }
+      @media screen and (max-width: 1023px) {
+        font-size: 20px;
+      }
+    }
+
+    &-text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 150%;
+      color: #FFFFFF;
+      @media screen and (max-width: 1279px) {
+        font-size: 22px;
+      }
+      @media screen and (max-width: 1023px) {
+        font-size: 20px;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 18px;
+      }
+
+      & + .card-text {
+        padding-top: 30px;
+      }
+    }
+  }
+}
+
+// COMMON :: END
